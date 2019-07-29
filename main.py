@@ -2,23 +2,24 @@ import webapp2
 import jinja2
 import os
 
-class ArtistPage(webapp2.RequestHandler):    
-    def post(self):
-        results_template = the_jinja_env.get_template('templates/results.html')
-        meme_first_line = self.request.get('user-first-ln')
-        meme_second_line = self.request.get('user-second-ln')
-        meme_img_choice = self.request.get('meme-type')
+the_jinja_env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
 
-        user_meme = Meme(first_line = meme_first_line,
-                         second_line = meme_second_line,
-                         pic_type = meme_img_choice)
-        user_meme.put()
-        the_variable_dict = {"line1": meme_first_line,
-                             "line2": meme_second_line,
-                             "img_url": user_meme.get_meme_url()}
+class ArtistPage(webapp2.RequestHandler): #Page that receives a post request with the value of moodchoose.
+    def post(self):
+        results_template = the_jinja_env.get_template('artistpage.html') #Selects an html file to be used as template
+        mood_choice = self.request.get('moodchoose') #THE ACTUAL MAGIC
+        the_variable_dict = {"mood":mood_choice}
         self.response.write(results_template.render(the_variable_dict))
 
+class MoodPage(webapp2.RequestHandler): #Initial page
+    def get(self):
+        welcome_template = the_jinja_env.get_template('moodpage.html')
+        self.response.write(welcome_template.render())
+
 app = webapp2.WSGIApplication([
-    ('/', EnterInfoHandler),
-    ('/memeresult', ShowMemeHandler)
+    ('/', MoodPage),
+    ('/artist', ArtistPage)
 ], debug=True)
