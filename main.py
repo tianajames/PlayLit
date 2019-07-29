@@ -19,7 +19,19 @@ class MoodPage(webapp2.RequestHandler): #Initial page
         welcome_template = the_jinja_env.get_template('moodpage.html')
         self.response.write(welcome_template.render())
 
+class WelcomePage(webapp2.RequestHandler):
+    def get(self): #for a get request
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write('Hello, World!') #the response
+
+class MainPage(webapp2.RequestHandler):
+    def get(self): #for a get request
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write('Hello, World!') #the response
+
 app = webapp2.WSGIApplication([
     ('/', MoodPage),
-    ('/artist', ArtistPage)
+    ('/artist', ArtistPage),
+    ('/welcome', WelcomePage),
+    ('/main', MainPage)
 ], debug=True)
