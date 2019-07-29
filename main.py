@@ -30,7 +30,7 @@ class MainPage(webapp2.RequestHandler):
         self.response.write('Hello, World!') #the response
 
 app = webapp2.WSGIApplication([
-    ('/', MoodPage),
+    ('/mood', MoodPage),
     ('/artist', ArtistPage),
     ('/welcome', WelcomePage),
     ('/main', MainPage)
