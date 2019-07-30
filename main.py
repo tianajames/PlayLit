@@ -12,7 +12,6 @@ class MoodPage(webapp2.RequestHandler): #Initial page
         print ("I am here")
         welcome_template = the_jinja_env.get_template('moodpage.html')
 
-
     def post(self):
         welcome_template = the_jinja_env.get_template('moodpage.html')
         occasion_choice = self.request.get('Occasion')
@@ -47,5 +46,5 @@ app = webapp2.WSGIApplication([
     ('/mood', MoodPage),
     ('/welcome', WelcomePage),
     ('/main', MainPage),
-    ('final', FinalPage)
+    ('/final', FinalPage)
 ], debug=True)
