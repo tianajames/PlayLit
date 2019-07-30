@@ -10,14 +10,31 @@ cache_token = token.get_access_token()
 spotify = spotipy.Spotify(cache_token)
 
 # replace with predefined buttons
+ocassion = raw_input("Type in a ocassion: ")
 mood = raw_input("Type in a mood: ")
+
+ocassion += " " + mood
 # searches for 5 playlists with mood
-search_playlist = spotify.search(mood,limit=5, offset=0, type='playlist')
+search_playlist = spotify.search(ocassion,limit=5, offset=0, type='playlist')
 # selects a random playlist out of the 5 options
 search_playlist = random.choice(search_playlist['playlists']['items'])
 # prints the name
 print(search_playlist['name'])
-# use playlist name to find all songs in playlist
+# use playlist id to find all songs in playlist
+playlist_tracks = spotify.user_playlist_tracks('batldre', search_playlist['id'],limit = 5)
+
+
+print(playlist_tracks['items'][1]['track']['name'])
+print(len(playlist_tracks['items'])-1)
+
+while playlist_tracks:
+    for i, playlist in enumerate(playlist_tracks['items']):
+        print("%4d %s" % (i + 1 + playlist_tracks['offset'], playlist['track']['name']))
+        if i == len(playlist_tracks['items'])-1:
+            playlist_tracks =False
+
+
+
 # add desired songs to playlist
 
 
