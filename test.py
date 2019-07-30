@@ -27,6 +27,7 @@ playlist_tracks = spotify.user_playlist_tracks('batldre', search_playlist['id'],
 print(playlist_tracks['items'][1]['track']['name'])
 print(len(playlist_tracks['items'])-1)
 
+
 while playlist_tracks:
     for i, playlist in enumerate(playlist_tracks['items']):
         print("%4d %s" % (i + 1 + playlist_tracks['offset'], playlist['track']['name']))
