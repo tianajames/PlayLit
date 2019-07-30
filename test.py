@@ -10,10 +10,10 @@ cache_token = token.get_access_token()
 spotify = spotipy.Spotify(cache_token)
 
 # replace with predefined buttons
-ocassion = raw_input("Type in a ocassion: ")
+occasion = raw_input("Type in a occasion: ")
 mood = raw_input("Type in a mood: ")
 
-ocassion += " " + mood
+occasion += " " + mood
 # searches for 5 playlists with mood
 search_playlist = spotify.search(ocassion,limit=5, offset=0, type='playlist')
 # selects a random playlist out of the 5 options
