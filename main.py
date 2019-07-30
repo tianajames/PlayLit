@@ -37,6 +37,10 @@ class MainPage(webapp2.RequestHandler):
         welcome_template = the_jinja_env.get_template('main.html')
         self.response.write(welcome_template.render())
 
+    def post(self):
+        welcome_template = the_jinja_env.get_template('main.html')
+        self.response.write(welcome_template.render())
+
 app = webapp2.WSGIApplication([
     ('/mood', MoodPage),
     ('/artist', ArtistPage),
