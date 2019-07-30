@@ -7,10 +7,12 @@ the_jinja_env = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
 class MoodPage(webapp2.RequestHandler): #Initial page
     def get(self):
         print ("I am here")
         welcome_template = the_jinja_env.get_template('moodpage.html')
+
 
     def post(self):
         welcome_template = the_jinja_env.get_template('moodpage.html')
