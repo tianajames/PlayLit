@@ -15,7 +15,7 @@ mood = raw_input("Type in a mood: ")
 
 occasion += " " + mood
 # searches for 5 playlists with mood
-search_playlist = spotify.search(ocassion,limit=5, offset=0, type='playlist')
+search_playlist = spotify.search(occasion,limit=5, offset=0, type='playlist')
 # selects a random playlist out of the 5 options
 search_playlist = random.choice(search_playlist['playlists']['items'])
 # prints the name
