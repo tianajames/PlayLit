@@ -34,12 +34,16 @@ class MainPage(webapp2.RequestHandler):
 
 class FinalPage(webapp2.RequestHandler):
     def get(self): #for a get request
-        welcome_template = the_jinja_env.get_template('final.html')
-        self.response.write(welcome_template.render())
+        results_template = the_jinja_env.get_template('results.html')
+        self.response.write(results_template.render())
 
     def post(self):
-        welcome_template = the_jinja_env.get_template('final.html')
-        self.response.write(welcome_template.render())
+        results_template = the_jinja_env.get_template('results.html')
+        occasion = self.request.get("occasion")
+        input_variables = {
+        "occassion":occasion,
+        }
+        self.response.write(results_template.render(input_variables))
 
 
 app = webapp2.WSGIApplication([
