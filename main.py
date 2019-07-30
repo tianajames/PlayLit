@@ -51,6 +51,7 @@ class ArtistPage(webapp2.RequestHandler):
         mood_choice = self.request.get('moodchoose')
         the_variable_dict = {"mood":mood_choice}
         self.response.write(welcome_template.render(the_variable_dict))
+        
 class FinalPage(webapp2.RequestHandler):
     def get(self): #for a get request
         welcome_template = the_jinja_env.get_template('final.html')
