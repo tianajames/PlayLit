@@ -1,7 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Abel:400&display=swap');
 
 #message {
-  color: white;
+
+}
+
+body {
   background: black;
+  color: white;
   font-family: Abel;
+}
+
+.mainmenubtn {
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.mainmenubtn:hover {
+    background-color: black;
+    }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-child {
+    display: none;
+    background-color: black;
+    min-width: 200px;
+}
+.dropdown-child a {
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-child {
+    display: block;
 }
