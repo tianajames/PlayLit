@@ -32,13 +32,19 @@ body {
 .dropdown-child {
     display: none;
     background-color: black;
-    min-width: 200px;
+    min-width: 100px;
+    border-radius: 30px;
 }
 .dropdown-child a {
     color: white;
     padding: 20px;
     text-decoration: none;
     display: block;
+    border-radius: 30px;
+}
+
+.dropdown-child a:hover {
+  background-color: orange;
 }
 
 .dropdown:hover .dropdown-child {
