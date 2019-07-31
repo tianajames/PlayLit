@@ -12,15 +12,15 @@
    padding-top: 15%;
    text-align: center;
    width: 100%;
-   font-style: italic;
  }
+
 
 h1 {
   font-size: 120px;
   font-family: "Georgia", serif;
   font-weight: bolder;
   font-stretch:extra-expanded;
-
+  font-style: italic;
 }
 
 input[type="submit" i] {

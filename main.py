@@ -12,11 +12,14 @@ class MoodPage(webapp2.RequestHandler): #Initial page
     def get(self):
         print ("I am here")
         welcome_template = the_jinja_env.get_template('moodpage.html')
+        occasion_choice = self.request.get('main')
+        the_variable_dict = {"occasion":occasion_choice}
+        self.response.write(welcome_template.render(the_variable_dict))
 
 
     def post(self):
         welcome_template = the_jinja_env.get_template('moodpage.html')
-        occasion_choice = self.request.get('Occasion')
+        occasion_choice = self.request.get('main')
         the_variable_dict = {"occasion":occasion_choice}
         self.response.write(welcome_template.render(the_variable_dict))
 

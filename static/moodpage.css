@@ -10,6 +10,24 @@ body {
   font-family: Abel;
 }
 
+h1 {
+  font-size: 120px;
+  font-family: "Georgia", serif;
+  font-weight: bolder;
+  font-stretch:extra-expanded;
+  text-align: center;
+  color: orange;
+  font-style: italic;
+}
+
+h2 {
+  color: orange;
+  font-size: 80px;
+}
+
+h3 {
+  font-size: 50px;
+}
 .mainmenubtn {
     background-color: orange;
     color: white;
@@ -19,10 +37,11 @@ body {
     margin-top:20px;
     border-radius: 30px;
     font-size: 20px;
+    width: 150px;
 }
 
 .mainmenubtn:hover {
-    background-color: black;
+    background-color: grey;
     }
 
 .dropdown {
@@ -34,6 +53,7 @@ body {
     background-color: black;
     min-width: 100px;
     border-radius: 30px;
+    font-size: 20px;
 }
 .dropdown-child a {
     color: white;
