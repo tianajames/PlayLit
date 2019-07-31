@@ -18,6 +18,7 @@
  }
 
 
+
 h1 {
   font-size: 120px;
   font-family: "Georgia", serif;
@@ -35,7 +36,7 @@ input[type="submit" i] {
   white-space: normal;
   letter-spacing: 2px;
   border-color: black;
-  font-family: "Georgia", serif;
+  font-family: Abel;
   font-size: 20px;
   font-weight:600;
   font-weight: bolder;
