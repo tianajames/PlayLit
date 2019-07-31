@@ -9,7 +9,6 @@ body {
   padding: 15px;
   border-image: url(border.png) 30% round;
   font-family: Abel;
-  overflow: hidden;
 
 }
  h2 {
