@@ -1,22 +1,52 @@
-body {
-  margin: 0px;
-  background-color: Black;
-}
-#welcomestyle {
-  background-color: Black;
+ body {
+   margin: 0px;
+   background-color: orange;
+ }
+
+ #header {
+   color: black;
+   background-image: url("http://static1.squarespace.com/static/541a57dfe4b0f8281ce7df61/5459dfdfe4b0f1f915086ebd/575d0ee91bbee04cda48f839/1502227394691/static1.squarespace-12.jpg?format=1500w");
+   font-size: 40px;
+   height: 150px;
+   margin: 0px;
+   padding-top: 15%;
+   text-align: center;
+   width: 100%;
+   font-style: italic;
+ }
+
+h1 {
+  font-size: 120px;
+  font-family: "Georgia", serif;
+  font-weight: bolder;
+  font-stretch:extra-expanded;
 
 }
-#header {
-  color: white;
-  background-color: White;
+
+input[type="submit" i] {
+  background-color: black;
+  color: orange;
+  border-radius: 500px;
+  padding: 16px 48px 18px;
+  min-width: 160px;
+  white-space: normal;
+  letter-spacing: 2px;
+  border-color: black;
+  font-family: "Georgia", serif;
   font-size: 20px;
-  height: 200px;
-  margin: 0px;
-  padding-top: 3%;
-  text-align: center;
-  width: 100%;
+  font-weight:600;
+  font-weight: bolder;
+  margin: auto;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  align: center;
+  /* might use :hover for hovering effects on button */
 }
 
-.title {
-  background-color: white
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 0%;
 }
