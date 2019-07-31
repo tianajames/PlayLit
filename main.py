@@ -41,7 +41,10 @@ class FinalPage(webapp2.RequestHandler):
 
     def post(self):
         welcome_template = the_jinja_env.get_template('final.html')
-        self.response.write(welcome_template.render())
+        mood_choice = self.request.get('Mood')
+        the_variable_dict = {"mood":mood_choice}
+        self.response.write(welcome_template.render(the_variable_dict))
+
 
 
 app = webapp2.WSGIApplication([
