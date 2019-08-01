@@ -18,7 +18,6 @@ class MoodPage(webapp2.RequestHandler): #Initial page
         the_variable_dict = {"occasion":occasion_choice}
         self.response.write(welcome_template.render(the_variable_dict))
 
-
     def post(self):
         welcome_template = the_jinja_env.get_template('moodpage.html')
         occasion_choice = self.request.get('main')
@@ -45,8 +44,10 @@ class FinalPage(webapp2.RequestHandler):
         mood_choice = self.request.get('mood')
         occasion_choice = self.request.get('main')
 
-        search = test2.get_search(mood_choice + occasion_choice)
+        search = test2.get_search(mood_choice + '%20' + occasion_choice)
+        print (search)
         search = json.loads(search)
+
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
         playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
@@ -76,8 +77,10 @@ class FinalPage(webapp2.RequestHandler):
         mood_choice = self.request.get('mood')
         occasion_choice = self.request.get('main')
 
-        search = test2.get_search(mood_choice +  occasion_choice)
+        search = test2.get_search(mood_choice + '%20' + occasion_choice)
+
         search = json.loads(search)
+
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
         playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
