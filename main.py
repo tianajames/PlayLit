@@ -52,19 +52,19 @@ class FinalPage(webapp2.RequestHandler):
 
         playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
 
-        tracks = test2.get_tracks(search['id'])
-        tracks = json.loads(tracks)
-        list = []
-        while tracks:
-            for i, playlist in enumerate(tracks['items']):
-                list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
-                if i == len(tracks['items'])-1:
-                    tracks =False
-        print(list)
+        # tracks = test2.get_tracks(search['id'])
+        # tracks = json.loads(tracks)
+        # list = []
+        # while tracks:
+        #     for i, playlist in enumerate(tracks['items']):
+        #         list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
+        #         if i == len(tracks['items'])-1:
+        #             tracks =False
+        # print(list)
 
         the_variable_dict = {
         "Mood":mood_choice,
-        "tracks":list,
+        # "tracks":list,
         "playlist_name": playlist_name,
         "playlist_id":playlist_id,
         }
@@ -82,19 +82,19 @@ class FinalPage(webapp2.RequestHandler):
 
         playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
 
-        tracks = test2.get_tracks(search['id'])
-        tracks = json.loads(tracks)
-        list = []
-        while tracks:
-            for i, playlist in enumerate(tracks['items']):
-                list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
-                if i == len(tracks['items'])-1:
-                    tracks =False
-        print(list)
+        # tracks = test2.get_tracks(search['id'])
+        # tracks = json.loads(tracks)
+        # list = []
+        # while tracks:
+        #     for i, playlist in enumerate(tracks['items']):
+        #         list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
+        #         if i == len(tracks['items'])-1:
+        #             tracks =False
+        # print(list)
 
         the_variable_dict = {
         "Mood":mood_choice,
-        "tracks":list,
+        # "tracks":list,
         "playlist_name": playlist_name,
         "playlist_id":playlist_id,
         }
