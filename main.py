@@ -96,13 +96,7 @@ class FinalPage(webapp2.RequestHandler):
         "Mood":mood_choice,
         "tracks":list,
         "playlist_name": playlist_name,
-        "playlist_id":playlist_id,
-
-        the_variable_dict = {
-        "Mood":mood_choice,
-        "tracks":list,
-        "playlist_name": playlist_name
-
+        "playlist_id":playlist_id, 
         }
 
         self.response.write(welcome_template.render(the_variable_dict))
