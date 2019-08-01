@@ -50,8 +50,6 @@ class FinalPage(webapp2.RequestHandler):
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
         playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
-<<<<<<< HEAD
-
         # tracks = test2.get_tracks(search['id'])
         # tracks = json.loads(tracks)
         # list = []
@@ -61,7 +59,7 @@ class FinalPage(webapp2.RequestHandler):
         #         if i == len(tracks['items'])-1:
         #             tracks =False
         # print(list)
-=======
+
         tracks = test2.get_tracks(search['id'])
         tracks = json.loads(tracks)
         list = []
@@ -71,7 +69,6 @@ class FinalPage(webapp2.RequestHandler):
                 if i == len(tracks['items'])-1:
                     tracks =False
         print(list)
->>>>>>> ef1d21c0a47978f91919e5ae82993d7d288a0b24
 
         the_variable_dict = {
         "Mood":mood_choice,
@@ -91,7 +88,7 @@ class FinalPage(webapp2.RequestHandler):
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
         playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
-<<<<<<< HEAD
+
 
         # tracks = test2.get_tracks(search['id'])
         # tracks = json.loads(tracks)
@@ -102,7 +99,6 @@ class FinalPage(webapp2.RequestHandler):
         #         if i == len(tracks['items'])-1:
         #             tracks =False
         # print(list)
-=======
         tracks = test2.get_tracks(search['id'])
         tracks = json.loads(tracks)
         list = []
@@ -112,7 +108,6 @@ class FinalPage(webapp2.RequestHandler):
                 if i == len(tracks['items'])-1:
                     tracks =False
         print(list)
->>>>>>> ef1d21c0a47978f91919e5ae82993d7d288a0b24
 
         the_variable_dict = {
         "Mood":mood_choice,
