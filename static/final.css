@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-body {
-  margin: 0px;
-  background-color: black;
-
-=======
 @import url('https://fonts.googleapis.com/css?family=Abel:400&display=swap');
 
 body {
@@ -11,7 +5,7 @@ body {
   background-color: black;
   color: white;
   font-family: Abel;
->>>>>>> f7c0ce8ccb9cab06c1a042a7a7dbba8b5b47fadc
+
 }
 
 h1 {
@@ -27,13 +21,11 @@ h1 {
   margin: 0px;
   padding-top: 15%;
   width: 100%;
-<<<<<<< HEAD
 
-=======
 }
 
 h2 {
   color: orange;
   font-size: 80px;
->>>>>>> f7c0ce8ccb9cab06c1a042a7a7dbba8b5b47fadc
+
 }

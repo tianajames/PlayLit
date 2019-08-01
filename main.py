@@ -45,7 +45,7 @@ class FinalPage(webapp2.RequestHandler):
         mood_choice = self.request.get('mood')
         occasion_choice = self.request.get('main')
 
-        search = test2.get_search(mood_choice)
+        search = test2.get_search(mood_choice + occasion_choice)
         search = json.loads(search)
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
@@ -76,7 +76,7 @@ class FinalPage(webapp2.RequestHandler):
         mood_choice = self.request.get('mood')
         occasion_choice = self.request.get('main')
 
-        search = test2.get_search(mood_choice)
+        search = test2.get_search(mood_choice +  occasion_choice)
         search = json.loads(search)
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
