@@ -49,7 +49,23 @@ class FinalPage(webapp2.RequestHandler):
         search = json.loads(search)
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
+<<<<<<< HEAD
 
+=======
+        playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
+<<<<<<< HEAD
+
+        # tracks = test2.get_tracks(search['id'])
+        # tracks = json.loads(tracks)
+        # list = []
+        # while tracks:
+        #     for i, playlist in enumerate(tracks['items']):
+        #         list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
+        #         if i == len(tracks['items'])-1:
+        #             tracks =False
+        # print(list)
+=======
+>>>>>>> 5d4400c81da85a04d1a35089bdc312890765100c
         tracks = test2.get_tracks(search['id'])
         tracks = json.loads(tracks)
         list = []
@@ -59,11 +75,18 @@ class FinalPage(webapp2.RequestHandler):
                 if i == len(tracks['items'])-1:
                     tracks =False
         print(list)
+>>>>>>> ef1d21c0a47978f91919e5ae82993d7d288a0b24
 
         the_variable_dict = {
         "Mood":mood_choice,
+<<<<<<< HEAD
         "tracks":list,
         "playlist_name": playlist_name
+=======
+        # "tracks":list,
+        "playlist_name": playlist_name,
+        "playlist_id":playlist_id,
+>>>>>>> 5d4400c81da85a04d1a35089bdc312890765100c
         }
 
         self.response.write(welcome_template.render(the_variable_dict))
@@ -76,7 +99,23 @@ class FinalPage(webapp2.RequestHandler):
         search = json.loads(search)
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
+<<<<<<< HEAD
 
+=======
+        playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
+<<<<<<< HEAD
+
+        # tracks = test2.get_tracks(search['id'])
+        # tracks = json.loads(tracks)
+        # list = []
+        # while tracks:
+        #     for i, playlist in enumerate(tracks['items']):
+        #         list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
+        #         if i == len(tracks['items'])-1:
+        #             tracks =False
+        # print(list)
+=======
+>>>>>>> 5d4400c81da85a04d1a35089bdc312890765100c
         tracks = test2.get_tracks(search['id'])
         tracks = json.loads(tracks)
         list = []
@@ -86,11 +125,18 @@ class FinalPage(webapp2.RequestHandler):
                 if i == len(tracks['items'])-1:
                     tracks =False
         print(list)
+>>>>>>> ef1d21c0a47978f91919e5ae82993d7d288a0b24
 
         the_variable_dict = {
         "Mood":mood_choice,
+<<<<<<< HEAD
         "tracks":list,
         "playlist_name": playlist_name
+=======
+        # "tracks":list,
+        "playlist_name": playlist_name,
+        "playlist_id":playlist_id,
+>>>>>>> 5d4400c81da85a04d1a35089bdc312890765100c
         }
 
         self.response.write(welcome_template.render(the_variable_dict))
