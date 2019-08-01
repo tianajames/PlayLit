@@ -49,7 +49,7 @@ class FinalPage(webapp2.RequestHandler):
         search = json.loads(search)
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
-
+        playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
         tracks = test2.get_tracks(search['id'])
         tracks = json.loads(tracks)
         list = []
@@ -63,7 +63,8 @@ class FinalPage(webapp2.RequestHandler):
         the_variable_dict = {
         "Mood":mood_choice,
         "tracks":list,
-        "playlist_name": playlist_name
+        "playlist_name": playlist_name,
+        "playlist_id":playlist_id,
         }
 
         self.response.write(welcome_template.render(the_variable_dict))
@@ -76,7 +77,7 @@ class FinalPage(webapp2.RequestHandler):
         search = json.loads(search)
         search = random.choice(search['playlists']['items'])
         playlist_name = search['name']
-
+        playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
         tracks = test2.get_tracks(search['id'])
         tracks = json.loads(tracks)
         list = []
@@ -90,7 +91,8 @@ class FinalPage(webapp2.RequestHandler):
         the_variable_dict = {
         "Mood":mood_choice,
         "tracks":list,
-        "playlist_name": playlist_name
+        "playlist_name": playlist_name,
+        "playlist_id":playlist_id,
         }
 
         self.response.write(welcome_template.render(the_variable_dict))
