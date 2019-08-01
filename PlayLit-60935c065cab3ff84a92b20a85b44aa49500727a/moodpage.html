@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> PlayLit - Mood Page </title>
+    <link rel="stylesheet" href="/static/moodpage.css">
+  </head>
+  <body> <div id = message>
+    <h1> PlayLit </h1>
+    <h2>You picked {{occasion}}!</h2>
+    <h3>One more step to make your playlist: </h3> </div>
+
+
+<!-- <div id = mooddrop>
+  <form class="" action="/final" method="post">
+    <select name="moodchoose">
+      <option value="mood">Mood</option>
+      <option value="relax">Relaxation</option>
+      <option value="fun">Fun</option>
+      <option value="romance">Romantic</option>
+      <option value="slow">Slow</option>
+      <option value="hype">Turn Up</option>
+    </select>
+    <button type="submit">See your suggested playlist!</button>
+</div> -->
+
+<div class="dropdown">
+  <button class="mainmenubtn">Mood</button>
+  <div class="dropdown-child">
+    <a href="final?mood=relaxation"> Relaxation </a>
+    <a href="final?mood=fun"> Fun </a>
+    <a href="final?mood=romantic"> Romantic </a>
+    <a href="final?mood=slow"> Slow </a>
+    <a href="final?mood=turnup"> Turn Up </a>
+  </div>
+</div>
+
+
+
+  </body>
+</html>
