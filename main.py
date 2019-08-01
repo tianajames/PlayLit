@@ -2,7 +2,8 @@ import webapp2
 import jinja2
 import os
 import test2
-
+import random
+import json
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -12,12 +13,15 @@ the_jinja_env = jinja2.Environment(
 class MoodPage(webapp2.RequestHandler): #Initial page
     def get(self):
         print ("I am here")
-        mood_template = the_jinja_env.get_template('moodpage.html')
+        welcome_template = the_jinja_env.get_template('moodpage.html')
+        occasion_choice = self.request.get('main')
+        the_variable_dict = {"occasion":occasion_choice}
+        self.response.write(welcome_template.render(the_variable_dict))
 
 
     def post(self):
         welcome_template = the_jinja_env.get_template('moodpage.html')
-        occasion_choice = self.request.get('Occasion')
+        occasion_choice = self.request.get('main')
         the_variable_dict = {"occasion":occasion_choice}
         self.response.write(welcome_template.render(the_variable_dict))
 
@@ -37,20 +41,61 @@ class MainPage(webapp2.RequestHandler):
 
 class FinalPage(webapp2.RequestHandler):
     def get(self): #for a get request
-        results_template = the_jinja_env.get_template('results.html')
-        self.response.write(results_template.render())
+        welcome_template = the_jinja_env.get_template('final.html')
+        mood_choice = self.request.get('mood')
 
-    def post(self):
-        results_template = the_jinja_env.get_template('results.html')
-        occasion = self.request.get("Occasion")
-        
-        input_variables = {
-            "occasion1":occasion,
-            # "songs":list1,
-            # "name":artist
+
+        search = test2.get_search(mood_choice)
+        search = json.loads(search)
+        search = random.choice(search['playlists']['items'])
+        playlist_name = search['name']
+        playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
+        tracks = test2.get_tracks(search['id'])
+        tracks = json.loads(tracks)
+        list = []
+        while tracks:
+            for i, playlist in enumerate(tracks['items']):
+                list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
+                if i == len(tracks['items'])-1:
+                    tracks =False
+        print(list)
+
+        the_variable_dict = {
+        "Mood":mood_choice,
+        "tracks":list,
+        "playlist_name": playlist_name,
+        "playlist_id":playlist_id,
         }
 
-        self.response.write(results_template.render(input_variables))
+        self.response.write(welcome_template.render(the_variable_dict))
+    def post(self):
+        welcome_template = the_jinja_env.get_template('final.html')
+        mood_choice = self.request.get('mood')
+
+
+        search = test2.get_search(mood_choice)
+        search = json.loads(search)
+        search = random.choice(search['playlists']['items'])
+        playlist_name = search['name']
+        playlist_id = "https://open.spotify.com/embed/user/spotify/playlist/" + search['id']
+        tracks = test2.get_tracks(search['id'])
+        tracks = json.loads(tracks)
+        list = []
+        while tracks:
+            for i, playlist in enumerate(tracks['items']):
+                list.append("%4d %s" % (i + 1 + tracks['offset'], playlist['track']['name']))
+                if i == len(tracks['items'])-1:
+                    tracks =False
+        print(list)
+
+        the_variable_dict = {
+        "Mood":mood_choice,
+        "tracks":list,
+        "playlist_name": playlist_name,
+        "playlist_id":playlist_id,
+        }
+
+        self.response.write(welcome_template.render(the_variable_dict))
 
 
 app = webapp2.WSGIApplication([
