@@ -32,7 +32,7 @@ class WelcomePage(webapp2.RequestHandler):
 class MainPage(webapp2.RequestHandler):
     def get(self): #for a get request
         welcome_template = the_jinja_env.get_template('main.html')
-        self.response.write(welcome_template.render())
+        self.response.write(welcome_template.render)
 
     def post(self):
         welcome_template = the_jinja_env.get_template('main.html')
