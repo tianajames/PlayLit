@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Abel:400&display=swap');
 
 body {
-  margin: 5px;
   background-color: black;
-  border: 10px white;
-  border-width: thin;
-  border: 10px solid transparent;
-  padding: 15px;
-  border-image: url(border.png) 30% round;
   font-family: Abel;
 
 }
@@ -40,8 +34,9 @@ h1 {
   font-size: 120px;
   font-family: "Georgia", serif;
   font-weight: bolder;
-  font-stretch: extra-expanded;
+  font-stretch:extra-expanded;
   text-align: center;
+  color: orange;
   font-style: italic;
   color: white;
   background-image: url("https://i.pinimg.com/originals/0b/3e/92/0b3e922a2deee03aa975e9e0a29a7803.jpg");
